@@ -227,25 +227,25 @@ const Textsave = () => {
       </Formik>
       {/* <Box sx={{ mt: 6, maxWidth: '90%', mx: 'auto' }}>
         <Typography variant="h6" gutterBottom>
-        Submitted Records
+          Submitted Records
         </Typography>
         <table border={1} width="100%" cellPadding={8} style={{ borderCollapse: 'collapse' }}>
           <thead style={{ backgroundColor: '#1976d2', color: 'white' }}>
-          <tr>
+            <tr>
               <th>Title</th>
               <th>Full Text</th>
-              </tr>
-              </thead>
-              <tbody>
-              {records.map((record, index) => (
-                <tr key={index}>
+            </tr>
+          </thead>
+          <tbody>
+            {records.map((record, index) => (
+              <tr key={index}>
                 <td>{record.inputText}</td>
                 <td>{record.fullText}</td>
-                </tr>
-                ))}
-                </tbody>
-                </table>
-                </Box> */}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Box> */}
     </Box>
   );
 };
