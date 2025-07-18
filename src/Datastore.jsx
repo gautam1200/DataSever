@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import axios from "axios";
 import { yellow } from '@mui/material/colors';
+import bg from './bg6.webp'
 
 import {
   TextField,
@@ -105,9 +106,9 @@ const Textsave = () => {
           <Form >
             <Box
               sx={{
-                
+
                 p: 2,
-                margin:' 0 10px ',
+                margin: ' 0 10px ',
                 display: 'flex',
                 flexDirection: 'column',
               }}
@@ -137,7 +138,15 @@ const Textsave = () => {
   }
 
   return (
-    <Box>
+    <Box sx={{
+      width: '100%',
+      height: '100vh',
+      backgroundImage: `url(${bg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+
+    }}>
       <Formik
         initialValues={{ inputText: '' }}
         onSubmit={handleInitialSubmit}
@@ -153,7 +162,8 @@ const Textsave = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxSizing:'border-box'
+                boxSizing: 'border-box',
+
               }}
             >
               <Box>
@@ -163,30 +173,51 @@ const Textsave = () => {
                   fullWidth
                   variant="outlined"
                   required
-                  placeholder='Entrer your text here...'
+                  placeholder="Enter your text here..."
                   name="inputText"
                   label="Enter key"
                   value={values.inputText}
                   onChange={handleChange}
-                  margin='auto'
+                  margin="normal"
+                  sx={{
+                    input: { color: 'white' },
+                    label: { color: '#ffffff85' },
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: 'white',
+                      },
+                      '&:hover fieldset': {
+                        borderColor: 'white',
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'white',
+                      },
+                    },
+                  }}
                 />
 
                 <Box width={'100%'}
                   display={'flex'}
                   justifyContent={'center'}>
 
-                  <Button type="submit"
+                  <Button
+                    type="submit"
                     sx={{
-                      background: '#ffc800',
-                      color: 'black',
+                      background: '#00729d',
+                      color: 'white',
                       marginTop: '20px',
                       fontFamily: 'math',
-                      fontSize: '20px',
+                      fontSize: '22px',
                       fontWeight: '700',
-                      padding: '5px 15px'
-                    }}>
+                      padding: '5px 20px',
+                      '&:hover': {
+                        background: '#003cff',
+                      },
+                    }}
+                  >
                     Submit
                   </Button>
+
                 </Box>
 
               </Box>
@@ -196,25 +227,25 @@ const Textsave = () => {
       </Formik>
       {/* <Box sx={{ mt: 6, maxWidth: '90%', mx: 'auto' }}>
         <Typography variant="h6" gutterBottom>
-          Submitted Records
+        Submitted Records
         </Typography>
         <table border={1} width="100%" cellPadding={8} style={{ borderCollapse: 'collapse' }}>
           <thead style={{ backgroundColor: '#1976d2', color: 'white' }}>
-            <tr>
+          <tr>
               <th>Title</th>
               <th>Full Text</th>
-            </tr>
-          </thead>
-          <tbody>
-            {records.map((record, index) => (
-              <tr key={index}>
+              </tr>
+              </thead>
+              <tbody>
+              {records.map((record, index) => (
+                <tr key={index}>
                 <td>{record.inputText}</td>
                 <td>{record.fullText}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Box> */}
+                </tr>
+                ))}
+                </tbody>
+                </table>
+                </Box> */}
     </Box>
   );
 };
