@@ -145,6 +145,7 @@ const Textsave = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
+      position:'relative'
 
     }}>
       <Formik
@@ -153,6 +154,7 @@ const Textsave = () => {
       >
         {({ handleChange, values }) => (
           <Form>
+
 
             <Box
               sx={{
@@ -246,7 +248,24 @@ const Textsave = () => {
           </tbody>
         </table>
       </Box> */}
-    </Box>
+      <Box
+      sx={{
+        width:'100%',
+        position:'absolute',
+        top:'0'
+      }}>
+
+      <Typography
+        sx={{
+          textAlign: 'center',
+          fontFamily: 'math',
+          color: 'white',
+          fontSize:'40px',
+          fontWeight:'bold',
+          padding:'30px 0'
+        }}>Online Editor</Typography>
+      </Box>
+    </Box >
   );
 };
 
