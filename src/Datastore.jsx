@@ -239,7 +239,7 @@ const Textsave = () => {
           </Form>
         )}
       </Formik>
-      <Box sx={{ mt: 6, maxWidth: '90%', mx: 'auto' }}>
+      {/* <Box sx={{ mt: 6, maxWidth: '90%', mx: 'auto' }}>
         <Typography variant="h6" gutterBottom>
           Submitted Records
         </Typography>
@@ -275,7 +275,7 @@ const Textsave = () => {
             ))}
           </tbody>
         </table>
-      </Box>
+      </Box> */}
       <Box
       sx={{
         width:'100%',
