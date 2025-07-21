@@ -95,6 +95,18 @@ const Textsave = () => {
       });
   };
 
+   const handleDelete = (id) => {
+    axios.delete(`https://generateapi.onrender.com/api/Textsave/${id}`, {
+      headers: { Authorization: key },
+    })
+      .then(() => {
+        getdata();
+      })
+      .catch((err) => {
+        console.error('Delete error:', err);
+      });
+  };
+
   if (showTextarea) {
     return (
       <Formik
@@ -227,7 +239,7 @@ const Textsave = () => {
           </Form>
         )}
       </Formik>
-      {/* <Box sx={{ mt: 6, maxWidth: '90%', mx: 'auto' }}>
+      <Box sx={{ mt: 6, maxWidth: '90%', mx: 'auto' }}>
         <Typography variant="h6" gutterBottom>
           Submitted Records
         </Typography>
@@ -236,6 +248,7 @@ const Textsave = () => {
             <tr>
               <th>Title</th>
               <th>Full Text</th>
+              <th>delete</th>
             </tr>
           </thead>
           <tbody>
@@ -243,11 +256,26 @@ const Textsave = () => {
               <tr key={index}>
                 <td>{record.inputText}</td>
                 <td>{record.fullText}</td>
+                <td>
+                  <button
+                    onClick={() => handleDelete(record._id)}
+                    style={{
+                      backgroundColor: 'red',
+                      color: 'white',
+                      border: 'none',
+                      padding: '5px 10px',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
-      </Box> */}
+      </Box>
       <Box
       sx={{
         width:'100%',
@@ -257,7 +285,7 @@ const Textsave = () => {
 
       <Typography
         sx={{
-          textAlign: 'center',
+          textAlign: 'center', 
           fontFamily: 'math',
           color: 'white',
           fontSize:'40px',
@@ -265,24 +293,23 @@ const Textsave = () => {
           padding:'30px 0'
         }}>Online Editor</Typography>
       </Box>
-      <Box
-      sx={{
+      <Box 
+      sx={{ 
         width:'100%',
         position:'absolute',
         bottom:'0'
-      }}>
+      }}> 
 
       <Typography
         sx={{
-          textAlign: 'right',
+          textAlign:'right',
           fontFamily: 'math',
-          color: '#ffffff42',
+          color: '#ffffff52',
           fontSize:'20px',
           fontWeight:'bold',
-          padding:'5px 20px'
+          padding:'5px 15px'
         }}>Developed by Gautam Parmar</Typography>
       </Box>
-      
     </Box >
   );
 };
