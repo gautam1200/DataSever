@@ -265,6 +265,24 @@ const Textsave = () => {
           padding:'30px 0'
         }}>Online Editor</Typography>
       </Box>
+      <Box
+      sx={{
+        width:'100%',
+        position:'absolute',
+        bottom:'0'
+      }}>
+
+      <Typography
+        sx={{
+          textAlign: 'right',
+          fontFamily: 'math',
+          color: '#ffffff42',
+          fontSize:'20px',
+          fontWeight:'bold',
+          padding:'5px 20px'
+        }}>Developed by Gautam Parmar</Typography>
+      </Box>
+      
     </Box >
   );
 };
