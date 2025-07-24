@@ -95,7 +95,7 @@ const Textsave = () => {
       });
   };
 
-   const handleDelete = (id) => {
+  const handleDelete = (id) => {
     axios.delete(`https://generateapi.onrender.com/api/Textsave/${id}`, {
       headers: { Authorization: key },
     })
@@ -115,7 +115,7 @@ const Textsave = () => {
         enableReinitialize
       >
         {({ handleChange }) => (
-          <Form >
+          <Form>
             <Box
               sx={{
 
@@ -123,9 +123,10 @@ const Textsave = () => {
                 margin: ' 0 10px ',
                 display: 'flex',
                 flexDirection: 'column',
+                position:'relative'
               }}
             >
-              <Typography variant="h6" sx={{ color: 'gold', fontStyle: 'italic', marginBottom: '5px' }}>
+              <Typography variant="h6" sx={{ color: 'gold', fontStyle: 'italic', marginBottom: '5px'}}>
                 Editing for: <strong>{inputText}</strong>
               </Typography>
               <Field
@@ -137,10 +138,10 @@ const Textsave = () => {
                 variant="outlined"
                 placeholder="Edit your full text here..."
                 onChange={handleChange}
-                sx={{ mb: 2, color: 'gold', }}
+                sx={{ mb: 2, color: 'gold'}}
               />
-              <Button type="submit" sx={{ background: 'gold' }}>
-                Save
+              <Button type="submit" sx={{ background: 'gold' ,  position:'absolute' , top:'10px' , right:'30px',fontWeight:'900' }}>
+                Save 
               </Button>
             </Box>
           </Form>
@@ -157,7 +158,7 @@ const Textsave = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-      position:'relative'
+      position: 'relative'
 
     }}>
       <Formik
@@ -277,38 +278,38 @@ const Textsave = () => {
         </table>
       </Box> */}
       <Box
-      sx={{
-        width:'100%',
-        position:'absolute',
-        top:'0'
-      }}>
-
-      <Typography
         sx={{
-          textAlign: 'center', 
-          fontFamily: 'math',
-          color: 'white',
-          fontSize:'40px',
-          fontWeight:'bold',
-          padding:'30px 0'
-        }}>Online Editor</Typography>
+          width: '100%',
+          position: 'absolute',
+          top: '0'
+        }}>
+
+        <Typography
+          sx={{
+            textAlign: 'center',
+            fontFamily: 'math',
+            color: 'white',
+            fontSize: '40px',
+            fontWeight: 'bold',
+            padding: '30px 0'
+          }}>Online Editor</Typography>
       </Box>
-      <Box 
-      sx={{ 
-        width:'100%',
-        position:'absolute',
-        bottom:'0'
-      }}> 
-
-      <Typography
+      <Box
         sx={{
-          textAlign:'right',
-          fontFamily: 'math',
-          color: '#ffffff52',
-          fontSize:'20px',
-          fontWeight:'bold',
-          padding:'5px 15px'
-        }}>Developed by Gautam Parmar</Typography>
+          width: '100%',
+          position: 'absolute',
+          bottom: '0'
+        }}>
+
+        <Typography
+          sx={{
+            textAlign: 'right',
+            fontFamily: 'math',
+            color: '#ffffff52',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            padding: '5px 15px'
+          }}>Developed by Gautam Parmar</Typography>
       </Box>
     </Box >
   );
