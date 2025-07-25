@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import axios from "axios";
 import { yellow } from '@mui/material/colors';
-import bg from './bg6.webp'
+import bg from './bg6.png'
 
 import {
   TextField,
