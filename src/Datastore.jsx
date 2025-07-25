@@ -126,7 +126,7 @@ const Textsave = () => {
                 position:'relative'
               }}
             >
-              <Typography variant="h6" sx={{ color: 'gold', fontStyle: 'italic', marginBottom: '5px'}}>
+              <Typography variant="h6" sx={{ color: '#00adff', fontStyle: 'italic', marginBottom: '15px'}}>
                 Editing for: <strong>{inputText}</strong>
               </Typography>
               <Field
@@ -134,13 +134,13 @@ const Textsave = () => {
                 as={TextField}
                 multiline
                 fullWidth
-                minRows={20}
+                minRows={24}
                 variant="outlined"
                 placeholder="Edit your full text here..."
                 onChange={handleChange}
-                sx={{ mb: 2, color: 'gold'}}
+                sx={{  color: 'white'}}
               />
-              <Button type="submit" sx={{ background: 'gold' ,  position:'absolute' , top:'10px' , right:'30px',fontWeight:'900' }}>
+              <Button type="submit" sx={{ background: '#00adff' ,color:'white' , padding:'5px 25px' , position:'absolute' , top:'15px' , right:'15px',fontWeight:'900' }}>
                 Save 
               </Button>
             </Box>
@@ -304,9 +304,9 @@ const Textsave = () => {
         <Typography
           sx={{
             textAlign: 'right',
-            fontFamily: 'math',
+            fontFamily: 'initial',
             color: '#ffffff52',
-            fontSize: '20px',
+            fontSize: '16px',
             fontWeight: 'bold',
             padding: '5px 15px'
           }}>Developed by Gautam Parmar</Typography>
